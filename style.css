@@ -346,39 +346,35 @@ a.logo-text {
   }
   
 .custom-gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem; /* Optional spacing between items */
+  column-count: 3;
+  column-gap: 1rem;
+  padding: 1rem;
 }
 
 .gallery-item {
-  width: 100%;
-  height: auto;
+  break-inside: avoid;
+  margin-bottom: 1rem;
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
-  object-fit: cover;
   display: block;
+  border-radius: 8px;
 }
 
-/* Desktop layout */
-@media (min-width: 900px) {
+@media (max-width: 900px) {
   .custom-gallery {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-  }
-
-  .gallery-item {
-    height: 100%;
-  }
-
-  .gallery-item img {
-    height: 100%;
+    column-count: 2;
   }
 }
 
-  
+@media (max-width: 600px) {
+  .custom-gallery {
+    column-count: 1;
+  }
+}
+
 
   .cta-banner-background {
     background-color: #3b5eff;
