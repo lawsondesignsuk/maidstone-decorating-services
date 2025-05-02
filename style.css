@@ -345,58 +345,39 @@ a.logo-text {
     }
   }
   
+.custom-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; /* Optional spacing between items */
+}
+
+.gallery-item {
+  width: 100%;
+  height: auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
   .custom-gallery {
-    display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
   }
-  
+
   .gallery-item {
-    width: 100%;
-    height: auto;
+    height: 100%;
   }
-  
+
   .gallery-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
+    height: 100%;
   }
-  
-  /* Desktop layout */
-  @media (min-width: 900px) {
-    .custom-gallery {
-      grid-template-columns: 25% 25% 50%;
-      grid-template-rows: 1fr 1fr;
-      grid-template-areas: 
-        "item1 item2 item4"
-        "item1 item3 item4";
-      height: auto;
-    }
-  
-    .item1 {
-      grid-area: item1;
-    }
-  
-    .item2 {
-      grid-area: item2;
-    }
-  
-    .item3 {
-      grid-area: item3;
-    }
-  
-    .item4 {
-      grid-area: item4;
-    }
-  
-    .gallery-item {
-      height: 100%;
-    }
-  
-    .gallery-item img {
-      height: 100%;
-    }
-  }
+}
+
   
 
   .cta-banner-background {
